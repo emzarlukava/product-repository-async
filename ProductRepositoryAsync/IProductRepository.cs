@@ -14,7 +14,7 @@ namespace ProductRepositoryAsync
         /// <exception cref="CollectionNotFoundException">collection is not found.</exception>
         /// <exception cref="ProductNotFoundException">product is not found.</exception>
         /// <exception cref="RepositoryException">a database error occurred.</exception>
-        Product GetProduct(int productId);
+        Task<Product> GetProductAsync(int productId);
 
         /// <summary>
         /// Adds a product to the product repository.
@@ -23,7 +23,7 @@ namespace ProductRepositoryAsync
         /// <returns>A product identifier.</returns>
         /// <exception cref="DatabaseConnectionException">database connection is lost.</exception>
         /// <exception cref="RepositoryException">a database error occurred.</exception>
-        int AddProduct(Product product);
+        Task<int> AddProductAsync(Product product);
 
         /// <summary>
         /// Removes a product from the product repository.
@@ -33,7 +33,7 @@ namespace ProductRepositoryAsync
         /// <exception cref="CollectionNotFoundException">collection is not found.</exception>
         /// <exception cref="ProductNotFoundException">product is not found.</exception>
         /// <exception cref="RepositoryException">a database error occurred.</exception>
-        void RemoveProduct(int productId);
+        Task RemoveProductAsync(int productId);
 
         /// <summary>
         /// Updates a product in the product repository.
@@ -43,6 +43,6 @@ namespace ProductRepositoryAsync
         /// <exception cref="CollectionNotFoundException">collection is not found.</exception>
         /// <exception cref="ProductNotFoundException">product is not found.</exception>
         /// <exception cref="RepositoryException">a database error occurred.</exception>
-        void UpdateProduct(Product product);
+        Task UpdateProductAsync(Product product);
     }
 }
